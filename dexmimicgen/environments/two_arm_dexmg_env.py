@@ -153,7 +153,9 @@ class TwoArmDexMGEnv(TwoArmEnv):
             old_path_split = old_path.split("/")
             # maybe replace all paths to robosuite assets
             check_lst = [
-                loc for loc, val in enumerate(old_path_split) if val == "dexmimicgen"
+                loc
+                for loc, val in enumerate(old_path_split)
+                if val == "dexmimicgen" or val == "dexmimicgen_environments"
             ]
             if len(check_lst) > 0:
                 ind = max(check_lst)  # last occurrence index
