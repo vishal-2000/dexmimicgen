@@ -35,7 +35,7 @@ pip install -e .
 After installation, you can run the following command to test the environments.
 
 ```bash
-python scripts demo_random_action.py --env TwoArmThreading --render
+python scripts/demo_random_action.py --env TwoArmThreading --render
 ```
 
 Note: If you are on a headless machine, you can run without the `--render` flag.
@@ -51,7 +51,7 @@ You can download the datasets from [HuggingFace](https://huggingface.co/datasets
 You can also run the script to download the datasets.
 
 ```bash
-python scripts/download_hf_datasets.py --path /path/to/save/datasets
+python scripts/download_hf_dataset.py --path /path/to/save/datasets
 ```
 
 By default, the datasets will be saved to `./datasets`.
