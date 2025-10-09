@@ -194,12 +194,12 @@ def eef_to_action_single_arm(eef_pos, eef_rot_mats, original_action, prev_eef_po
     action = np.copy(original_action)
 
     # Set robot action in position space
-    action[0:3] = eef_pos[0] - prev_eef_pos[0]
+    action[0:3] = eef_pos - prev_eef_pos#[0]
     action[0:3] = np.clip(action[0:3] / max_dpos, -1., 1.)
 
     # Set robot action in rotation space
     curr_rot = T.quat2mat(prev_eef_quat[0])
-    target_rot = eef_rot_mats[0] # T.quat2mat(prev_eef_quat[0])
+    target_rot = eef_rot_mats#[0] # T.quat2mat(prev_eef_quat[0])
     if cur_rot_from_env:
         curr_rot[:, [1, 2]] = curr_rot[:, [2, 1]]
         curr_rot = -1 * curr_rot
